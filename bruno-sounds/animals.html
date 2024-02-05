@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animal Sounds for Bruno</title>
+    <style>
+        body {
+            font-family: monospace;
+            font-weight: 700;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .animal {
+            width: 25%;
+            height: 50%;
+            border: 2px solid #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            box-sizing: border-box;
+        }
+
+        .animal:hover {
+            content: attr(data-color);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="animal" onclick="playSound('dog.mp3')">Dog</div>
+    <div class="animal" onclick="playSound('cat.mp3')">Cat</div>
+    <div class="animal" onclick="playSound('bird.mp3')">Bird</div>
+    <div class="animal" onclick="playSound('cow.mp3')">Cow</div>
+    <div class="animal" onclick="playSound('horse.mp3')">Horse</div>
+    <div class="animal" onclick="playSound('frog.mp3')">Frog</div>
+    <div class="animal" onclick="playSound('duck.mp3')">Duck</div>
+    <div class="animal" onclick="playSound('elephant.mp3')">Elephant</div>
+
+    <audio id="audio" src=""></audio>
+
+    <script>
+        function playSound(soundFile) {
+            var audio = document.getElementById("audio");
+            audio.src = soundFile;
+            audio.play();
+        }
+    </script>
+
+</body>
+
+</html>
